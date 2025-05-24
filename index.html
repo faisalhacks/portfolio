@@ -55,7 +55,11 @@
             --particle-bg-gradient: linear-gradient(45deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             --particle-color: #4a5568;
             --particle-line-color: #60a5fa;
-            --current-font: var(--font-primary);
+            --current-font: var(--font-primary); /* Default font */
+
+            /* RGB versions for semi-transparent backgrounds */
+            --accent-primary-rgb: 56, 189, 248;
+            --accent-secondary-rgb: 129, 140, 248;
         }
 
         body.theme-light {
@@ -99,6 +103,9 @@
             --particle-color: #9ca3af;
             --particle-line-color: #3b82f6;
             --current-font: var(--font-primary);
+
+            --accent-primary-rgb: 37, 99, 235;
+            --accent-secondary-rgb: 124, 58, 237;
         }
 
         body.theme-cyberpunk {
@@ -144,6 +151,9 @@
             --particle-color: #ff00ff;
             --particle-line-color: #00f0ff;
             --current-font: var(--font-cyberpunk);
+
+            --accent-primary-rgb: 255, 0, 255;
+            --accent-secondary-rgb: 0, 240, 255;
         }
         
         body.theme-nature {
@@ -190,6 +200,9 @@
             --particle-color: #8fbc8f;
             --particle-line-color: #228b22;
             --current-font: var(--font-primary);
+
+            --accent-primary-rgb: 34, 139, 34;
+            --accent-secondary-rgb: 60, 179, 113;
         }
 
 
@@ -224,7 +237,7 @@
             background-image: var(--particle-bg-gradient);
             background-size: 400% 400%;
             animation: gradientShift 20s ease infinite;
-            transition: background-image 0.5s ease;
+            transition: background-image 0.5s ease; /* Smooth transition for particle background */
         }
 
         @keyframes gradientShift {
@@ -240,9 +253,10 @@
             transform: translateX(-50%);
             z-index: 1000;
             background: var(--bg-nav);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px); /* Frosted glass effect */
+            -webkit-backdrop-filter: blur(15px); /* Safari support */
             border: 1px solid var(--border-primary);
-            border-radius: 50px;
+            border-radius: 50px; /* Pill shape */
             padding: 12px 25px;
             transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 30px var(--shadow-nav);
@@ -250,14 +264,14 @@
 
         nav:hover {
             background: var(--bg-nav-hover);
-            transform: translateX(-50%) scale(1.03);
+            transform: translateX(-50%) scale(1.03); /* Slight zoom on hover */
         }
 
         nav ul {
             display: flex;
             list-style: none;
             gap: 20px; 
-            flex-wrap: wrap; /* Allow nav items to wrap */
+            flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
             justify-content: center; /* Center wrapped items */
         }
 
@@ -267,17 +281,17 @@
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
-            padding: 5px 0;
+            padding: 5px 0; /* Padding for underline space */
         }
 
-        nav a::after {
+        nav a::after { /* Underline effect */
             content: '';
             position: absolute;
             bottom: -2px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--section-title-underline);
+            background: var(--section-title-underline); /* Use accent gradient */
             transition: width 0.3s ease;
             border-radius: 1px;
         }
@@ -297,17 +311,17 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
-            padding: 20px;
+            position: relative; /* For z-index stacking if needed */
+            padding: 20px; /* Padding for smaller screens */
         }
 
         .hero-content {
-            z-index: 10;
+            z-index: 10; /* Ensure content is above background animations */
             animation: fadeInUp 1s ease-out;
         }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 7vw, 6rem);
+            font-size: clamp(2.8rem, 7vw, 6rem); /* Responsive font size */
             font-weight: 800;
             background: var(--text-hero-glow);
             -webkit-background-clip: text;
@@ -321,7 +335,7 @@
             font-size: clamp(1.1rem, 2.5vw, 1.8rem);
             color: var(--text-secondary);
             margin-bottom: 25px;
-            opacity: 0;
+            opacity: 0; /* For animation */
             animation: fadeInUp 1s ease-out 0.4s forwards;
             font-weight: 300;
         }
@@ -330,8 +344,8 @@
             font-size: clamp(0.9rem, 1.8vw, 1.1rem);
             color: var(--text-tertiary);
             margin-bottom: 35px;
-            max-width: 600px;
-            opacity: 0;
+            max-width: 600px; /* Prevent tagline from being too wide */
+            opacity: 0; /* For animation */
             animation: fadeInUp 1s ease-out 0.8s forwards;
         }
 
@@ -341,28 +355,28 @@
             background: var(--accent-gradient);
             border: none;
             border-radius: 50px;
-            color: white; /* Assuming white text on gradient buttons */
+            color: white; /* Default for gradient buttons, can be overridden by theme */
             text-decoration: none;
             font-weight: 600;
             font-size: 1rem;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
-            opacity: 0;
+            overflow: hidden; /* For potential ripple effects or shines */
+            opacity: 0; /* For animation */
             animation: fadeInUp 1s ease-out 1.2s forwards;
             box-shadow: 0 10px 20px var(--shadow-button);
             cursor: pointer;
         }
-        body.theme-cyberpunk .cta-button { /* Specific text color for cyberpunk button if needed */
+        body.theme-cyberpunk .cta-button { /* Specific text color for cyberpunk button */
             color: var(--bg-primary); /* Dark text on bright cyberpunk gradient */
         }
 
 
         section {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
+            padding: 80px 5%; /* Standard padding, % for responsiveness */
+            max-width: 1200px; /* Limit content width for large screens */
+            margin: 0 auto; /* Center content */
+            position: relative; /* For potential pseudo-elements or absolute positioning inside */
         }
 
         .section-title {
@@ -375,9 +389,9 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 10px; /* Space for underline */
         }
-        .section-title::after {
+        .section-title::after { /* Underline for section titles */
             content: '';
             position: absolute;
             bottom: 0;
@@ -389,11 +403,12 @@
             border-radius: 2px;
         }
 
+        /* About Section */
         .about-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 2fr 1fr; /* Text column wider than profile card */
             gap: 50px;
-            align-items: flex-start;
+            align-items: flex-start; /* Align items to the top */
         }
 
         .about-text {
@@ -414,12 +429,12 @@
 
         .profile-card-container {
              display: flex;
-             justify-content: center;
+             justify-content: center; /* Center card if grid column is wider */
              align-items: flex-start;
         }
 
         .profile-card {
-            width: 280px;
+            width: 280px; /* Fixed width for the card */
             background: var(--bg-card);
             backdrop-filter: blur(10px);
             border: 1px solid var(--border-card);
@@ -431,7 +446,7 @@
         }
 
         .profile-card:hover {
-            transform: translateY(-12px) scale(1.03);
+            transform: translateY(-12px) scale(1.03); /* Lift and scale effect */
             box-shadow: 0 20px 40px var(--shadow-card-hover);
         }
 
@@ -439,16 +454,16 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background: var(--accent-gradient);
+            background: var(--accent-gradient); /* Gradient background for icon/initials */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.5rem; /* For icon if no image */
             color: white; /* Assuming white icon on gradient */
             margin: 0 auto 20px auto;
-            box-shadow: 0 0 25px var(--shadow-button); /* Re-use button shadow for consistency */
+            box-shadow: 0 0 25px var(--shadow-button); /* Subtle glow */
         }
-         .profile-avatar img {
+         .profile-avatar img { /* If using an image */
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -467,6 +482,7 @@
             font-size: 0.95rem;
         }
         
+        /* Skills Styling */
         .skills-container {
             margin-top: 30px;
         }
@@ -494,45 +510,46 @@
             background: var(--bg-tertiary); 
             border: 1px solid var(--border-primary);
             padding: 8px 15px;
-            border-radius: 20px;
+            border-radius: 20px; /* Pill-shaped tags */
             font-size: 0.85rem;
             color: var(--text-primary);
             transition: all 0.3s ease;
-            cursor: default;
+            cursor: default; /* Indicate they are not clickable links */
         }
         .skill-tag:hover {
             background: var(--bg-secondary);
-            transform: translateY(-2px);
+            transform: translateY(-2px); /* Slight lift on hover */
             color: var(--text-primary); /* Ensure contrast */
         }
 
+        /* Experience Timeline */
         .experience-timeline {
             position: relative;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 800px; /* Constrain width for readability */
+            margin: 0 auto; /* Center the timeline */
         }
-        .experience-timeline::before { 
+        .experience-timeline::before { /* The central line */
             content: '';
             position: absolute;
-            left: 20px;
+            left: 20px; /* Position relative to timeline items */
             top: 0;
             bottom: 0;
             width: 3px;
-            background: var(--accent-gradient);
+            background: var(--accent-gradient); /* Gradient line */
             border-radius: 2px;
         }
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
-            padding-left: 50px; 
+            margin-bottom: 40px; /* Space between items */
+            padding-left: 50px; /* Space for the icon */
         }
         .timeline-item:last-child {
             margin-bottom: 0;
         }
         .timeline-icon {
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 0; /* Aligns with the timeline's ::before pseudo-element */
+            top: 0; /* Align with the top of the content */
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -543,7 +560,7 @@
             justify-content: center;
             font-size: 1.2rem;
             color: var(--accent-primary);
-            z-index: 1;
+            z-index: 1; /* Above the timeline line */
         }
         .timeline-content {
             background: var(--bg-card); /* Use card bg for consistency */
@@ -554,7 +571,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .timeline-content:hover {
-            transform: translateX(10px);
+            transform: translateX(10px); /* Slight shift on hover */
             box-shadow: 0 8px 25px var(--shadow-card-hover);
         }
         .timeline-content h3 {
@@ -580,9 +597,10 @@
             line-height: 1.6;
         }
 
+        /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better fit */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
             gap: 30px;
         }
 
@@ -592,45 +610,45 @@
             border: 1px solid var(--border-card);
             border-radius: 15px;
             padding: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy transition */
+            position: relative; /* For pseudo-elements or absolute positioning inside */
+            overflow: hidden; /* Clip image zoom */
             box-shadow: 0 10px 30px var(--shadow-card);
-            display: flex;
-            flex-direction: column;
+            display: flex; /* For flex layout of content */
+            flex-direction: column; /* Stack content vertically */
         }
 
         .project-card:hover {
             transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 20px 40px var(--shadow-card-hover), 0 0 30px var(--shadow-card-hover-accent);
+            box-shadow: 0 20px 40px var(--shadow-card-hover), 0 0 30px var(--shadow-card-hover-accent); /* Combined shadow */
         }
         .project-image-container {
             width: 100%;
-            height: 180px;
-            background-color: var(--bg-tertiary); 
-            border-radius: 10px;
+            height: 180px; /* Fixed height for consistency */
+            background-color: var(--bg-tertiary); /* Placeholder bg */
+            border-radius: 10px; /* Rounded corners for image container */
             margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow: hidden; /* Important for image zoom effect */
         }
         .project-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
+            object-fit: cover; /* Cover the container, might crop */
+            transition: transform 0.4s ease; /* Smooth zoom */
         }
         .project-card:hover .project-image-container img {
-            transform: scale(1.1);
+            transform: scale(1.1); /* Zoom image on card hover */
         }
         
         .project-content {
-            position: relative;
+            position: relative; /* Ensure content is above any pseudo-elements if used */
             z-index: 2;
-            flex-grow: 1; 
+            flex-grow: 1; /* Allow content to take available space */
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Stack inner content */
         }
 
         .project-title {
@@ -645,8 +663,8 @@
             line-height: 1.6;
             font-size: 0.9rem;
             margin-bottom: 15px;
-            min-height: 60px; /* Adjusted min-height */
-            flex-grow: 1; 
+            min-height: 60px; /* Ensure some consistent height */
+            flex-grow: 1; /* Push links to bottom */
         }
 
         .project-tech {
@@ -659,7 +677,7 @@
         .tech-tag {
             background: var(--bg-tertiary);
             padding: 5px 12px;
-            border-radius: 15px;
+            border-radius: 15px; /* Smaller pill tags */
             font-size: 0.75rem;
             color: var(--text-primary); /* Ensure contrast */
         }
@@ -667,18 +685,18 @@
             display: flex;
             flex-wrap: wrap; 
             gap: 12px;
-            margin-top: auto; 
+            margin-top: auto; /* Pushes links to the bottom of the card */
         }
         .project-link, .gemini-project-button {
             padding: 8px 15px;
             border-radius: 20px;
-            background: rgba(var(--accent-primary-rgb, 56, 189, 248), 0.2); /* Fallback for RGB conversion */
+            background: rgba(var(--accent-primary-rgb), 0.2); /* Semi-transparent accent */
             color: var(--accent-primary);
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
             transition: all 0.3s ease;
-            display: inline-flex;
+            display: inline-flex; /* Align icon and text */
             align-items: center;
             border: none; 
             cursor: pointer; 
@@ -687,28 +705,23 @@
             margin-right: 6px;
         }
         .project-link:hover, .gemini-project-button:hover {
-            background: rgba(var(--accent-primary-rgb, 56, 189, 248), 0.4);
+            background: rgba(var(--accent-primary-rgb), 0.4);
             color: var(--text-primary); /* Ensure contrast on hover */
-            transform: translateY(-2px);
+            transform: translateY(-2px); /* Slight lift */
         }
         .gemini-project-button { 
-            background: rgba(var(--accent-secondary-rgb, 139, 92, 246), 0.2); 
+            background: rgba(var(--accent-secondary-rgb), 0.2); 
             color: var(--accent-secondary);
         }
         .gemini-project-button:hover {
-             background: rgba(var(--accent-secondary-rgb, 139, 92, 246), 0.4);
+             background: rgba(var(--accent-secondary-rgb), 0.4);
              color: var(--text-primary); /* Ensure contrast */
         }
-        /* Helper for RGB conversion (used in JS if needed, or pre-calculate) */
-        body.theme-default-dark { --accent-primary-rgb: 56, 189, 248; --accent-secondary-rgb: 129, 140, 248; }
-        body.theme-light { --accent-primary-rgb: 37, 99, 235; --accent-secondary-rgb: 124, 58, 237; }
-        body.theme-cyberpunk { --accent-primary-rgb: 255, 0, 255; --accent-secondary-rgb: 0, 240, 255; }
-        body.theme-nature { --accent-primary-rgb: 34, 139, 34; --accent-secondary-rgb: 60, 179, 113; }
 
-
+        /* Awards Section */
         .awards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted minmax */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
             gap: 30px;
         }
         .award-card {
@@ -737,6 +750,7 @@
              background: var(--award-icon-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text; /* Standard property */
         }
         .award-title {
             font-size: 1.2rem;
@@ -750,6 +764,7 @@
             line-height: 1.5;
         }
 
+        /* Education Section */
         .education-list {
             display: flex;
             flex-direction: column;
@@ -764,7 +779,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .education-item:hover {
-            transform: scale(1.02);
+            transform: scale(1.02); /* Subtle scale effect */
             box-shadow: 0 8px 25px var(--shadow-card-hover);
         }
         .education-item h3 {
@@ -790,8 +805,10 @@
         }
         .education-item .coursework strong {
             color: var(--text-primary);
+            font-weight: 500; /* Slightly less bold than h3 */
         }
 
+        /* Contact Section */
         .contact { text-align: center; }
         .contact-content { max-width: 700px; margin: 0 auto; }
         .contact-content p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 35px; line-height: 1.7;}
@@ -813,12 +830,13 @@
             outline: none;
             border-color: var(--border-input-focus);
             background: var(--bg-input-focus);
-            box-shadow: 0 0 15px rgba(var(--accent-primary-rgb, 56, 189, 248), 0.2);
+            box-shadow: 0 0 15px rgba(var(--accent-primary-rgb), 0.2);
         }
         input::placeholder, textarea::placeholder { color: var(--text-tertiary); }
         textarea { grid-column: 1 / -1; min-height: 120px; resize: vertical; }
         .submit-btn { grid-column: 1 / -1; justify-self: center; width: auto; padding: 14px 40px; }
 
+        /* Footer */
         footer {
             background: var(--bg-footer); 
             padding: 30px 5%;
@@ -834,7 +852,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white; /* Assuming white icon on gradient */
+            color: white; /* Default for gradient, can be overridden */
             text-decoration: none;
             font-size: 1.1rem;
             transition: all 0.3s ease;
@@ -842,22 +860,23 @@
         body.theme-cyberpunk .social-link { color: var(--bg-primary); } /* Dark icon on bright cyberpunk gradient */
 
         .social-link:hover {
-            transform: translateY(-5px) scale(1.1);
+            transform: translateY(-5px) scale(1.1); /* Lift and scale */
             box-shadow: 0 10px 20px var(--shadow-button); /* Re-use button shadow */
         }
         footer p { color: var(--text-tertiary); font-size: 0.9rem; }
 
+        /* Modal Styles */
         .modal {
             display: none; position: fixed; z-index: 2000; left: 0; top: 0;
             width: 100%; height: 100%; overflow: auto; 
             background-color: rgba(0,0,0,0.6); 
-            backdrop-filter: blur(5px);
-            align-items: center; justify-content: center;
+            backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+            align-items: center; justify-content: center; /* Center modal content */
         }
         .modal-content {
             background: var(--bg-modal); margin: auto; padding: 30px;
             border: 1px solid var(--border-primary); border-radius: 15px;
-            width: 90%; max-width: 700px;
+            width: 90%; max-width: 700px; /* Responsive width */
             box-shadow: 0 10px 40px rgba(0,0,0,0.4);
             position: relative; animation: zoomIn 0.3s ease-out;
         }
@@ -868,27 +887,29 @@
         }
         .modal-header h3 {
             font-size: 1.5rem; color: var(--text-primary);
-            background: var(--section-title-gradient);
+            background: var(--section-title-gradient); /* Gradient for modal title */
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
         .close-button { color: var(--text-secondary); font-size: 1.8rem; font-weight: bold; transition: color 0.3s ease; }
         .close-button:hover, .close-button:focus { color: var(--text-primary); text-decoration: none; cursor: pointer; }
         .modal-body {
             color: var(--text-secondary); line-height: 1.7; font-size: 1rem;
-            max-height: 60vh; overflow-y: auto; white-space: pre-wrap;
+            max-height: 60vh; overflow-y: auto; white-space: pre-wrap; /* Preserve line breaks from API */
         }
-        .modal-body.loading::after {
+        .modal-body.loading::after { /* Loading indicator */
             content: '✨ Generating Insights... Please Wait'; display: block;
             text-align: center; margin-top: 20px; color: var(--accent-secondary); font-style: italic;
         }
 
+        /* Animations */
         @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes textGlow { /* Text glow might need theme-specific adjustments if colors don't use CSS vars well */
-            from { text-shadow: 0 0 10px rgba(var(--accent-primary-rgb, 96, 165, 250), 0.3), 0 0 20px rgba(var(--accent-secondary-rgb, 167, 139, 250), 0.2); }
-            to { text-shadow: 0 0 20px rgba(var(--accent-primary-rgb, 96, 165, 250), 0.5), 0 0 30px rgba(var(--accent-secondary-rgb, 167, 139, 250), 0.3), 0 0 40px rgba(var(--accent-primary-rgb, 96, 165, 250), 0.1); }
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px rgba(var(--accent-primary-rgb), 0.3), 0 0 20px rgba(var(--accent-secondary-rgb), 0.2); }
+            to { text-shadow: 0 0 20px rgba(var(--accent-primary-rgb), 0.5), 0 0 30px rgba(var(--accent-secondary-rgb), 0.3), 0 0 40px rgba(var(--accent-primary-rgb), 0.1); }
         }
 
+        /* Scroll Fade-in Animation */
         .fade-in-section { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in-section.visible { opacity: 1; transform: translateY(0); }
 
@@ -897,7 +918,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 1001;
+            z-index: 1001; /* Above nav if nav is also fixed */
         }
         #theme-toggle-button {
             background: var(--bg-secondary);
@@ -934,7 +955,7 @@
         #theme-options.hidden {
             opacity: 0;
             transform: translateY(10px);
-            pointer-events: none;
+            pointer-events: none; /* Prevent interaction when hidden */
         }
         #theme-options button {
             background: var(--bg-tertiary);
@@ -944,7 +965,7 @@
             border-radius: 5px;
             cursor: pointer;
             text-align: left;
-            transition: background 0.3s;
+            transition: background 0.3s, color 0.3s; /* Added color transition */
             font-family: var(--font-primary); /* Use consistent font for buttons */
         }
         #theme-options button:hover {
@@ -959,8 +980,8 @@
         /* Responsive Design */
         @media (max-width: 992px) { 
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .profile-card-container { justify-content: center; margin-bottom: 30px; order: 1; }
-            .about-text { order: 2; }
+            .profile-card-container { justify-content: center; margin-bottom: 30px; order: 1; } /* Center card and move it up */
+            .about-text { order: 2; } /* Text below card */
         }
 
         @media (max-width: 768px) { 
@@ -969,8 +990,8 @@
             .hero h1 { font-size: clamp(2.2rem, 10vw, 3.5rem); } /* Adjusted hero font size */
             .hero .subtitle { font-size: clamp(1rem, 4vw, 1.4rem); }
             .section-title { font-size: clamp(1.8rem, 6vw, 2.5rem); } /* Adjusted section title */
-            .form-group { grid-template-columns: 1fr; }
-            .projects-grid, .awards-grid { grid-template-columns: 1fr; } 
+            .form-group { grid-template-columns: 1fr; } /* Stack form inputs */
+            .projects-grid, .awards-grid { grid-template-columns: 1fr; } /* Single column for cards */
             .experience-timeline::before { left: 15px; }
             .timeline-icon { width: 30px; height: 30px; font-size: 1rem; border-width: 2px; }
             .timeline-item { padding-left: 40px; }
@@ -984,12 +1005,11 @@
             nav ul { gap: 8px; }
             nav a { font-size: 0.9rem; } /* Smaller nav links */
             .cta-button, .project-link, .gemini-project-button, .submit-btn { padding: 10px 20px; font-size: 0.9rem; }
-            .project-description { min-height: 50px; }
+            .project-description { min-height: 50px; } /* Adjust project card description height */
         }
     </style>
 </head>
-<body>
-    <div class="bg-animation">
+<body class="theme-default-dark"> <div class="bg-animation">
         <div id="particles-js"></div>
     </div>
     
@@ -1001,6 +1021,7 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#awards">Awards</a></li>
             <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -1301,7 +1322,7 @@
         // let currentParticlesInstance; // Not strictly needed if re-initializing on same ID
 
         // Function to initialize or update particles.js
-        function setupParticles(theme) {
+        function setupParticles(themeName) { // themeName param is illustrative, actual values are read from CSS
             const particleConfig = {
                 "particles": {
                     "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
@@ -1319,6 +1340,7 @@
                 "retina_detect": true
             };
             
+            // Get particle colors from CSS variables of the currently applied theme
             const computedStyle = getComputedStyle(document.body);
             particleConfig.particles.color = { "value": computedStyle.getPropertyValue('--particle-color').trim() };
             particleConfig.particles.line_linked.color = computedStyle.getPropertyValue('--particle-line-color').trim();
@@ -1339,14 +1361,17 @@
             document.body.className = themeName; 
             localStorage.setItem('portfolioTheme', themeName);
             
+            // Delay particle setup slightly to ensure CSS variables are fully applied
             setTimeout(() => setupParticles(themeName), 50); 
 
+            // Update placeholder image colors based on the new theme
             const computedBodyStyle = getComputedStyle(document.body);
             const bgTertiaryValue = computedBodyStyle.getPropertyValue('--bg-tertiary').trim();
             const textPrimaryValue = computedBodyStyle.getPropertyValue('--text-primary').trim();
             
-            const cleanBgHex = bgTertiaryValue.startsWith('#') ? bgTertiaryValue.substring(1) : '334155'; // Default dark theme's tertiary bg
-            const cleanTextHex = textPrimaryValue.startsWith('#') ? textPrimaryValue.substring(1) : 'e2e8f0'; // Default dark theme's primary text
+            // Ensure hex codes are clean (remove # if present)
+            const cleanBgHex = bgTertiaryValue.startsWith('#') ? bgTertiaryValue.substring(1) : '334155'; // Fallback
+            const cleanTextHex = textPrimaryValue.startsWith('#') ? textPrimaryValue.substring(1) : 'e2e8f0'; // Fallback
 
             document.querySelectorAll('.project-image-container img').forEach(img => {
                 if (img.src.includes('placehold.co')) {
@@ -1373,7 +1398,7 @@
 
         // Load saved theme or default
         function loadTheme() {
-            const savedTheme = localStorage.getItem('portfolioTheme') || 'theme-default-dark';
+            const savedTheme = localStorage.getItem('portfolioTheme') || 'theme-default-dark'; // Default to dark
             applyTheme(savedTheme);
         }
         
@@ -1381,7 +1406,7 @@
         document.addEventListener('DOMContentLoaded', loadTheme);
 
 
-        // Smooth scrolling
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1391,13 +1416,13 @@
                     const navbar = document.querySelector('nav');
                     const navbarHeight = navbar ? navbar.offsetHeight : 0;
                     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - navbarHeight - 20; 
+                    const offsetPosition = elementPosition - navbarHeight - 20; // Adjust for nav height and some padding
                     window.scrollTo({top: offsetPosition, behavior: 'smooth'});
                 }
             });
         });
 
-        // Scroll Animations
+        // Scroll Animations for sections
         const sections = document.querySelectorAll('.fade-in-section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1405,16 +1430,16 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, {threshold: 0.1});
+        }, {threshold: 0.1}); // Trigger when 10% of the section is visible
         sections.forEach(section => {
             if(section) observer.observe(section);
         });
 
-        // Update footer year
+        // Update footer year dynamically
         const currentYearSpan = document.getElementById('currentYear');
         if(currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
-        // Contact Form Submission
+        // Contact Form Submission (Demo)
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
@@ -1429,18 +1454,19 @@
                 }
                 if(formStatusMessage) formStatusMessage.textContent = ''; 
 
+                // Simulate API call
                 setTimeout(() => {
-                    console.log("Form data:", Object.fromEntries(formData));
+                    console.log("Form data (demo):", Object.fromEntries(formData));
                     if(formStatusMessage) {
                         formStatusMessage.textContent = "Thank you for your message! (Demo submission)";
                         formStatusMessage.style.color = getComputedStyle(document.body).getPropertyValue('--accent-primary').trim();
                     }
-                    this.reset();
+                    this.reset(); // Clear the form
                     if(submitButton) {
                         submitButton.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
                         submitButton.disabled = false;
                     }
-                    if(formStatusMessage) {
+                    if(formStatusMessage) { // Clear status message after a few seconds
                        setTimeout(() => { formStatusMessage.textContent = ''; }, 5000);
                     }
                 }, 1500);
@@ -1449,9 +1475,9 @@
 
         // Modal Functionality
         const modal = document.getElementById("projectInsightModal");
-        const modalTitleElement = document.getElementById("modalTitle"); // Renamed to avoid conflict
-        const modalBodyElement = document.getElementById("modalBody");   // Renamed to avoid conflict
-        const closeModalButton = document.querySelector(".modal .close-button"); // More specific selector
+        const modalTitleElement = document.getElementById("modalTitle"); 
+        const modalBodyElement = document.getElementById("modalBody");   
+        const closeModalButton = document.querySelector(".modal .close-button");
 
         function openModal() {
             if(modal) modal.style.display = "flex";
@@ -1465,10 +1491,10 @@
         }
         if(closeModalButton) closeModalButton.onclick = closeModal;
         
-        window.addEventListener('click', function(event) { // Added event listener to window
+        window.addEventListener('click', function(event) { // Close modal if clicked outside content
             if (event.target == modal) closeModal();
         });
-        document.addEventListener('keydown', function(event) {
+        document.addEventListener('keydown', function(event) { // Close modal with Escape key
             if (event.key === "Escape" && modal && modal.style.display === "flex") {
                 closeModal();
             }
@@ -1476,7 +1502,7 @@
 
 
         // Gemini API Integration for Project Insights
-        const API_KEY = ""; // IMPORTANT: Leave empty, Canvas will provide it.
+        const API_KEY = ""; // IMPORTANT: Leave empty, Canvas will provide it in runtime.
 
         document.querySelectorAll('.gemini-project-button').forEach(button => {
             button.addEventListener('click', async function() {
@@ -1506,7 +1532,7 @@
                 try {
                     const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
                     const payload = { contents: chatHistory };
-                    const apiUrl = \`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=\${API_KEY}\`;
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
                     
                     const response = await fetch(apiUrl, {
                         method: 'POST',
@@ -1517,7 +1543,7 @@
                     if (!response.ok) {
                         const errorData = await response.json();
                         console.error("Gemini API Error:", errorData);
-                        throw new Error(\`API request failed with status \${response.status}: \${errorData?.error?.message || 'Unknown error'}\`);
+                        throw new Error(`API request failed with status ${response.status}: ${errorData?.error?.message || 'Unknown error'}`);
                     }
                     
                     const result = await response.json();
@@ -1527,11 +1553,14 @@
                         result.candidates[0].content && result.candidates[0].content.parts &&
                         result.candidates[0].content.parts.length > 0) {
                         const text = result.candidates[0].content.parts[0].text;
-                        // Corrected regex for bold, italic, and newlines
-                        let htmlText = text.replace(/\\*\\*([^*]+?)\\*\\*/g, '<strong>$1</strong>'); // Bold
-                        htmlText = htmlText.replace(/(?<!\\*)\\*([^*]+?)\\*(?!\\*)/g, '<em>$1</em>');    // Italic (not part of bold)
-                        htmlText = htmlText.replace(/\\n\\n/g, '<br><br>');      // Paragraph newlines
-                        htmlText = htmlText.replace(/\\n/g, '<br>');            // Single newlines
+                        // Convert Markdown-like syntax to HTML
+                        let htmlText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
+                        htmlText = htmlText.replace(/\*(.*?)\*/g, (match, p1) => { // Italic (ensure not part of bold)
+                            if (match.startsWith('**') && match.endsWith('**')) return match; // Avoid double processing bold
+                            return `<em>${p1}</em>`;
+                        });
+                        htmlText = htmlText.replace(/\n\n/g, '<br><br>');   // Paragraph newlines
+                        htmlText = htmlText.replace(/\n/g, '<br>');        // Single newlines
                         if(modalBodyElement) modalBodyElement.innerHTML = htmlText;
                     } else {
                         if(modalBodyElement) modalBodyElement.textContent = "Sorry, I couldn't generate insights for this project at the moment.";
@@ -1541,7 +1570,7 @@
                     console.error("Error calling Gemini API for project insights:", error);
                     if(modalBodyElement) {
                         modalBodyElement.classList.remove('loading');
-                        modalBodyElement.textContent = \`Error generating insights: \${error.message}. Please check the console for details.\`;
+                        modalBodyElement.textContent = `Error generating insights: ${error.message}. Please check the console for details.`;
                     }
                 }
             });
