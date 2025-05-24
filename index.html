@@ -24,14 +24,14 @@
             --bg-input: rgba(30, 41, 59, 0.7);
             --bg-input-focus: rgba(51, 65, 85, 0.8);
             --bg-footer: #0b1120;
-            
+
             --text-primary: #e2e8f0;
             --text-secondary: #94a3b8;
             --text-tertiary: #64748b;
             --text-nav: #94a3b8;
             --text-nav-hover: #e2e8f0;
             --text-hero-glow: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-            
+
             --border-primary: rgba(51, 65, 85, 0.5);
             --border-card: rgba(51, 65, 85, 0.6);
             --border-input: rgba(51, 65, 85, 0.6);
@@ -80,7 +80,7 @@
             --text-nav: #334155;
             --text-nav-hover: #0f172a;
             --text-hero-glow: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-            
+
             --border-primary: rgba(100, 116, 139, 0.4);
             --border-card: rgba(100, 116, 139, 0.5);
             --border-input: rgba(100, 116, 139, 0.5);
@@ -91,7 +91,7 @@
             --accent-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
             --section-title-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             --section-title-underline: linear-gradient(90deg, #2563eb, #7c3aed);
-            
+
             --shadow-nav: rgba(51, 65, 85, 0.1);
             --shadow-card: rgba(51, 65, 85, 0.1);
             --shadow-card-hover: rgba(51, 65, 85, 0.15);
@@ -126,7 +126,7 @@
             --text-nav: #f7ff00;
             --text-nav-hover: #00f0ff;
             --text-hero-glow: linear-gradient(135deg, #00f0ff 0%, #ff00ff 100%);
-            
+
             --border-primary: rgba(0, 240, 255, 0.3);
             --border-card: rgba(0, 240, 255, 0.4);
             --border-input: rgba(0, 240, 255, 0.4);
@@ -155,7 +155,7 @@
             --accent-primary-rgb: 255, 0, 255;
             --accent-secondary-rgb: 0, 240, 255;
         }
-        
+
         body.theme-nature {
             --bg-primary: #f0fff4; /* Honeydew */
             --bg-secondary: #e6f5e9; /* Lighter Mint Cream */
@@ -174,7 +174,7 @@
             --text-nav: #556b2f;
             --text-nav-hover: #2f4f4f;
             --text-hero-glow: linear-gradient(135deg, #228b22 0%, #3cb371 100%); /* ForestGreen to MediumSeaGreen */
-            
+
             --border-primary: rgba(47, 79, 79, 0.3);
             --border-card: rgba(47, 79, 79, 0.4);
             --border-input: rgba(47, 79, 79, 0.4);
@@ -270,7 +270,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px; 
+            gap: 20px;
             flex-wrap: wrap; /* Allow nav items to wrap on smaller screens */
             justify-content: center; /* Center wrapped items */
         }
@@ -303,7 +303,7 @@
         nav a:hover::after {
             width: 100%;
         }
-        
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -481,7 +481,7 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
         }
-        
+
         /* Skills Styling */
         .skills-container {
             margin-top: 30px;
@@ -496,7 +496,7 @@
             margin-bottom: 20px;
         }
         .skills-category h5 {
-            color: var(--text-primary); 
+            color: var(--text-primary);
             font-size: 1rem;
             margin-bottom: 10px;
             font-weight: 500;
@@ -507,7 +507,7 @@
             gap: 10px;
         }
         .skill-tag {
-            background: var(--bg-tertiary); 
+            background: var(--bg-tertiary);
             border: 1px solid var(--border-primary);
             padding: 8px 15px;
             border-radius: 20px; /* Pill-shaped tags */
@@ -553,7 +553,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--bg-secondary); 
+            background: var(--bg-secondary);
             border: 3px solid var(--accent-primary);
             display: flex;
             align-items: center;
@@ -642,7 +642,7 @@
         .project-card:hover .project-image-container img {
             transform: scale(1.1); /* Zoom image on card hover */
         }
-        
+
         .project-content {
             position: relative; /* Ensure content is above any pseudo-elements if used */
             z-index: 2;
@@ -683,7 +683,7 @@
         }
         .project-links {
             display: flex;
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
             gap: 12px;
             margin-top: auto; /* Pushes links to the bottom of the card */
         }
@@ -698,8 +698,8 @@
             transition: all 0.3s ease;
             display: inline-flex; /* Align icon and text */
             align-items: center;
-            border: none; 
-            cursor: pointer; 
+            border: none;
+            cursor: pointer;
         }
         .project-link i, .gemini-project-button i {
             margin-right: 6px;
@@ -709,8 +709,8 @@
             color: var(--text-primary); /* Ensure contrast on hover */
             transform: translateY(-2px); /* Slight lift */
         }
-        .gemini-project-button { 
-            background: rgba(var(--accent-secondary-rgb), 0.2); 
+        .gemini-project-button {
+            background: rgba(var(--accent-secondary-rgb), 0.2);
             color: var(--accent-secondary);
         }
         .gemini-project-button:hover {
@@ -742,7 +742,7 @@
         }
         .award-icon {
             font-size: 2.5rem;
-            color: var(--award-icon-color); 
+            color: var(--award-icon-color);
             margin-bottom: 15px;
         }
         /* For gradient icons if not using FontAwesome's duotone or direct SVG */
@@ -838,7 +838,7 @@
 
         /* Footer */
         footer {
-            background: var(--bg-footer); 
+            background: var(--bg-footer);
             padding: 30px 5%;
             text-align: center;
             border-top: 1px solid var(--border-primary);
@@ -868,8 +868,8 @@
         /* Modal Styles */
         .modal {
             display: none; position: fixed; z-index: 2000; left: 0; top: 0;
-            width: 100%; height: 100%; overflow: auto; 
-            background-color: rgba(0,0,0,0.6); 
+            width: 100%; height: 100%; overflow: auto;
+            background-color: rgba(0,0,0,0.6);
             backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
             align-items: center; justify-content: center; /* Center modal content */
         }
@@ -978,13 +978,13 @@
 
 
         /* Responsive Design */
-        @media (max-width: 992px) { 
+        @media (max-width: 992px) {
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
             .profile-card-container { justify-content: center; margin-bottom: 30px; order: 1; } /* Center card and move it up */
             .about-text { order: 2; } /* Text below card */
         }
 
-        @media (max-width: 768px) { 
+        @media (max-width: 768px) {
             nav { width: 90%; padding: 10px 15px; }
             nav ul { gap: 10px; } /* Further reduce gap for smaller screens */
             .hero h1 { font-size: clamp(2.2rem, 10vw, 3.5rem); } /* Adjusted hero font size */
@@ -1012,7 +1012,7 @@
 <body class="theme-default-dark"> <div class="bg-animation">
         <div id="particles-js"></div>
     </div>
-    
+
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -1042,7 +1042,7 @@
                 <h3>Hello! I'm Faisal, an AI Engineer.</h3>
                 <p>I am passionate about leveraging artificial intelligence and machine learning to build innovative and impactful solutions. My journey in AI is driven by a curiosity for deep learning, computer vision, and the potential of large language models. I thrive on tackling complex problems and continuously expanding my knowledge in this ever-evolving field.</p>
                 <p>With a strong foundation in model optimization, multimodal AI, and practical development, I aim to contribute to cutting-edge research and create technologies that make a difference.</p>
-                
+
                 <div class="skills-container">
                     <h4>Technical Skills</h4>
                     <div class="skills-category">
@@ -1104,7 +1104,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="profile-card-container">
                 <div class="profile-card">
                     <div class="profile-avatar">
@@ -1146,7 +1146,7 @@
     <section id="projects" class="projects fade-in-section">
         <h2 class="section-title">Projects & Research</h2>
         <div class="projects-grid">
-            
+
             <div class="project-card">
                 <div class="project-image-container">
                     <img src="https://placehold.co/600x400/334155/e2e8f0?text=Research+Paper" alt="Optimizing DL Models Research" onerror="this.onerror=null;this.src='https://placehold.co/600x400/334155/e2e8f0?text=Img+Error';">
@@ -1223,7 +1223,7 @@
             </div>
         </div>
     </section>
-    
+
     <section id="education" class="education fade-in-section">
         <h2 class="section-title">Education</h2>
         <div class="education-list">
@@ -1248,8 +1248,8 @@
 
     <section id="certifications" class="certifications fade-in-section">
         <h2 class="section-title">Certifications</h2>
-        <div class="awards-grid"> 
-            <div class="award-card"> 
+        <div class="awards-grid">
+            <div class="award-card">
                 <div class="award-icon" style="color: var(--accent-primary);"><i class="fas fa-certificate"></i></div>
                 <h3 class="award-title">Responsible & Safe AI System</h3>
                 <p class="award-description">NPTEL</p>
@@ -1262,7 +1262,7 @@
             <div class="award-card">
                 <div class="award-icon" style="color: var(--accent-primary);"><i class="fas fa-certificate"></i></div>
                 <h3 class="award-title">PyTorch Fundamentals</h3>
-                <p class="award-description">NVIDIA DLI</p> 
+                <p class="award-description">NVIDIA DLI</p>
             </div>
         </div>
     </section>
@@ -1271,8 +1271,8 @@
         <div class="contact-content">
             <h2 class="section-title">Let's Connect</h2>
             <p>I'm always excited to discuss new projects, research collaborations, or opportunities in AI. Feel free to reach out!</p>
-            
-            <form class="contact-form" action="YOUR_FORM_ENDPOINT" method="POST"> 
+
+            <form class="contact-form" action="YOUR_FORM_ENDPOINT" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -1287,9 +1287,9 @@
 
     <footer>
         <div class="social-links">
-            <a href="mailto:faisalparvez.work@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a> 
-            <a href="https://www.linkedin.com/in/mohammed-faisal-parvez-621368241/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a> 
-            <a href="https://github.com/faisalhacks" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a> 
+            <a href="mailto:faisalparvez.work@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/mohammed-faisal-parvez-621368241/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/faisalhacks" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.kaggle.com/faisal012" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
             <a href="https://huggingface.co/Mohaaxa" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face"><i class="fas fa-robot"></i></a>
         </div>
@@ -1318,9 +1318,6 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // particles.js instance
-        // let currentParticlesInstance; // Not strictly needed if re-initializing on same ID
-
         // Function to initialize or update particles.js
         function setupParticles(themeName) { // themeName param is illustrative, actual values are read from CSS
             const particleConfig = {
@@ -1339,18 +1336,15 @@
                 },
                 "retina_detect": true
             };
-            
-            // Get particle colors from CSS variables of the currently applied theme
+
             const computedStyle = getComputedStyle(document.body);
             particleConfig.particles.color = { "value": computedStyle.getPropertyValue('--particle-color').trim() };
             particleConfig.particles.line_linked.color = computedStyle.getPropertyValue('--particle-line-color').trim();
-            
-            // Re-initialize particles.js. It handles cleanup of the old instance if called on the same ID.
-            if (document.getElementById('particles-js')) { // Ensure the element exists
+
+            if (document.getElementById('particles-js')) {
                 particlesJS("particles-js", particleConfig);
             }
         }
-
 
         // Theme Switcher Logic
         const themeToggleButton = document.getElementById('theme-toggle-button');
@@ -1358,24 +1352,21 @@
         const themeButtons = themeOptions.querySelectorAll('button');
 
         function applyTheme(themeName) {
-            document.body.className = themeName; 
+            document.body.className = themeName;
             localStorage.setItem('portfolioTheme', themeName);
-            
-            // Delay particle setup slightly to ensure CSS variables are fully applied
-            setTimeout(() => setupParticles(themeName), 50); 
 
-            // Update placeholder image colors based on the new theme
+            setTimeout(() => setupParticles(themeName), 50);
+
             const computedBodyStyle = getComputedStyle(document.body);
             const bgTertiaryValue = computedBodyStyle.getPropertyValue('--bg-tertiary').trim();
             const textPrimaryValue = computedBodyStyle.getPropertyValue('--text-primary').trim();
-            
-            // Ensure hex codes are clean (remove # if present)
-            const cleanBgHex = bgTertiaryValue.startsWith('#') ? bgTertiaryValue.substring(1) : '334155'; // Fallback
-            const cleanTextHex = textPrimaryValue.startsWith('#') ? textPrimaryValue.substring(1) : 'e2e8f0'; // Fallback
+
+            const cleanBgHex = bgTertiaryValue.startsWith('#') ? bgTertiaryValue.substring(1) : '334155';
+            const cleanTextHex = textPrimaryValue.startsWith('#') ? textPrimaryValue.substring(1) : 'e2e8f0';
 
             document.querySelectorAll('.project-image-container img').forEach(img => {
                 if (img.src.includes('placehold.co')) {
-                    let altText = img.alt.replace(/\s+/g, '+').replace(/[^a-zA-Z0-9+]/g, '') || 'Project'; // Sanitize alt text
+                    let altText = img.alt.replace(/\s+/g, '+').replace(/[^a-zA-Z0-9+]/g, '') || 'Project';
                     img.src = `https://placehold.co/600x400/${cleanBgHex}/${cleanTextHex}?text=${altText}`;
                 }
             });
@@ -1390,21 +1381,24 @@
                 button.addEventListener('click', () => {
                     const themeName = button.dataset.theme;
                     applyTheme(themeName);
-                    themeOptions.classList.add('hidden'); 
+                    themeOptions.classList.add('hidden');
                 });
             });
         }
 
-
-        // Load saved theme or default
+        // Load saved theme or apply a random one
         function loadTheme() {
-            const savedTheme = localStorage.getItem('portfolioTheme') || 'theme-default-dark'; // Default to dark
-            applyTheme(savedTheme);
+            const savedTheme = localStorage.getItem('portfolioTheme');
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                const availableThemes = ['theme-default-dark', 'theme-light', 'theme-cyberpunk', 'theme-nature'];
+                const randomTheme = availableThemes[Math.floor(Math.random() * availableThemes.length)];
+                applyTheme(randomTheme);
+            }
         }
-        
-        // Initial load - DOMContentLoaded ensures elements are available
-        document.addEventListener('DOMContentLoaded', loadTheme);
 
+        document.addEventListener('DOMContentLoaded', loadTheme);
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1416,7 +1410,7 @@
                     const navbar = document.querySelector('nav');
                     const navbarHeight = navbar ? navbar.offsetHeight : 0;
                     const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                    const offsetPosition = elementPosition - navbarHeight - 20; // Adjust for nav height and some padding
+                    const offsetPosition = elementPosition - navbarHeight - 20;
                     window.scrollTo({top: offsetPosition, behavior: 'smooth'});
                 }
             });
@@ -1430,16 +1424,14 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, {threshold: 0.1}); // Trigger when 10% of the section is visible
+        }, {threshold: 0.1});
         sections.forEach(section => {
             if(section) observer.observe(section);
         });
 
-        // Update footer year dynamically
         const currentYearSpan = document.getElementById('currentYear');
         if(currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 
-        // Contact Form Submission (Demo)
         const contactForm = document.querySelector('.contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', function(e) {
@@ -1447,36 +1439,34 @@
                 const formData = new FormData(this);
                 const submitButton = this.querySelector('.submit-btn');
                 const formStatusMessage = document.getElementById('form-status-message');
-                
+
                 if(submitButton) {
                     submitButton.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
                     submitButton.disabled = true;
                 }
-                if(formStatusMessage) formStatusMessage.textContent = ''; 
+                if(formStatusMessage) formStatusMessage.textContent = '';
 
-                // Simulate API call
                 setTimeout(() => {
                     console.log("Form data (demo):", Object.fromEntries(formData));
                     if(formStatusMessage) {
                         formStatusMessage.textContent = "Thank you for your message! (Demo submission)";
                         formStatusMessage.style.color = getComputedStyle(document.body).getPropertyValue('--accent-primary').trim();
                     }
-                    this.reset(); // Clear the form
+                    this.reset();
                     if(submitButton) {
                         submitButton.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
                         submitButton.disabled = false;
                     }
-                    if(formStatusMessage) { // Clear status message after a few seconds
+                    if(formStatusMessage) {
                        setTimeout(() => { formStatusMessage.textContent = ''; }, 5000);
                     }
                 }, 1500);
             });
         }
 
-        // Modal Functionality
         const modal = document.getElementById("projectInsightModal");
-        const modalTitleElement = document.getElementById("modalTitle"); 
-        const modalBodyElement = document.getElementById("modalBody");   
+        const modalTitleElement = document.getElementById("modalTitle");
+        const modalBodyElement = document.getElementById("modalBody");
         const closeModalButton = document.querySelector(".modal .close-button");
 
         function openModal() {
@@ -1485,33 +1475,31 @@
         function closeModal() {
             if(modal) modal.style.display = "none";
             if(modalBodyElement) {
-                modalBodyElement.innerHTML = ''; 
+                modalBodyElement.innerHTML = '';
                 modalBodyElement.classList.remove('loading');
             }
         }
         if(closeModalButton) closeModalButton.onclick = closeModal;
-        
-        window.addEventListener('click', function(event) { // Close modal if clicked outside content
+
+        window.addEventListener('click', function(event) {
             if (event.target == modal) closeModal();
         });
-        document.addEventListener('keydown', function(event) { // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && modal && modal.style.display === "flex") {
                 closeModal();
             }
         });
 
-
-        // Gemini API Integration for Project Insights
-        const API_KEY = ""; // IMPORTANT: Leave empty, Canvas will provide it in runtime.
+        const API_KEY = "";
 
         document.querySelectorAll('.gemini-project-button').forEach(button => {
             button.addEventListener('click', async function() {
                 const projectTitleText = this.dataset.projectTitle;
                 const projectDescText = this.dataset.projectDesc;
-                
+
                 if(modalTitleElement) modalTitleElement.textContent = `✨ AI Insights for: ${projectTitleText}`;
                 if(modalBodyElement) {
-                    modalBodyElement.innerHTML = ''; 
+                    modalBodyElement.innerHTML = '';
                     modalBodyElement.classList.add('loading');
                 }
                 openModal();
@@ -1533,7 +1521,7 @@
                     const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
                     const payload = { contents: chatHistory };
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
-                    
+
                     const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -1545,7 +1533,7 @@
                         console.error("Gemini API Error:", errorData);
                         throw new Error(`API request failed with status ${response.status}: ${errorData?.error?.message || 'Unknown error'}`);
                     }
-                    
+
                     const result = await response.json();
                     if(modalBodyElement) modalBodyElement.classList.remove('loading');
 
@@ -1553,14 +1541,14 @@
                         result.candidates[0].content && result.candidates[0].content.parts &&
                         result.candidates[0].content.parts.length > 0) {
                         const text = result.candidates[0].content.parts[0].text;
-                        // Convert Markdown-like syntax to HTML
-                        let htmlText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'); // Bold
-                        htmlText = htmlText.replace(/\*(.*?)\*/g, (match, p1) => { // Italic (ensure not part of bold)
-                            if (match.startsWith('**') && match.endsWith('**')) return match; // Avoid double processing bold
+
+                        let htmlText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                        htmlText = htmlText.replace(/\*(.*?)\*/g, (match, p1) => {
+                            if (match.startsWith('**') && match.endsWith('**')) return match;
                             return `<em>${p1}</em>`;
                         });
-                        htmlText = htmlText.replace(/\n\n/g, '<br><br>');   // Paragraph newlines
-                        htmlText = htmlText.replace(/\n/g, '<br>');        // Single newlines
+                        htmlText = htmlText.replace(/\n\n/g, '<br><br>');
+                        htmlText = htmlText.replace(/\n/g, '<br>');
                         if(modalBodyElement) modalBodyElement.innerHTML = htmlText;
                     } else {
                         if(modalBodyElement) modalBodyElement.textContent = "Sorry, I couldn't generate insights for this project at the moment.";
