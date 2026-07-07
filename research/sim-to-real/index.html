@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F-04 · The Sim-to-Real Gap in Indoor Segmentation — Mohammed Faisal Parvez</title>
+<meta name="description" content="Do synthetic validation scores predict real-world performance? SegFormer-B0 on 1,458 labeled real indoor images: 0.676 real mIoU — while a synthetic-trained counterpart scored 0.988 val mIoU yet failed on real footage.">
+<meta name="author" content="Mohammed Faisal Parvez">
+<meta name="theme-color" content="#050507">
+<meta property="og:type" content="website">
+<meta property="og:title" content="F-04 · The Sim-to-Real Gap in Indoor Segmentation — Mohammed Faisal Parvez">
+<meta property="og:description" content="Do synthetic validation scores predict real-world performance? SegFormer-B0 on 1,458 labeled real indoor images: 0.676 real mIoU — while a synthetic-trained counterpart scored 0.988 val mIoU yet failed on real footage.">
+<meta property="og:site_name" content="Mohammed Faisal Parvez — Research">
+
+<meta property="og:image" content="/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="F-04 · The Sim-to-Real Gap in Indoor Segmentation — Mohammed Faisal Parvez">
+<meta name="twitter:description" content="Do synthetic validation scores predict real-world performance? SegFormer-B0 on 1,458 labeled real indoor images: 0.676 real mIoU — while a synthetic-trained counterpart scored 0.988 val mIoU yet failed on real footage.">
+<meta name="twitter:image" content="/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23050507'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='34' fill='%2331e8ff'%3EF.%3C/text%3E%3C/svg%3E">
+<script>(function(){var d=document.documentElement;d.className=d.className.replace("no-js","js");try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("mfpPre")){sessionStorage.setItem("mfpPre","1");d.classList.add("preload");}else{d.classList.add("ready");}}catch(e){d.classList.add("ready");}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/main.css">
+<script defer src="../../assets/js/main.js"></script>
+</head>
+<body>
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-inner">
+    <div class="pre-count"><span id="preNum">000</span><sup>%</sup></div>
+    <div class="pre-log mono">
+      <span class="lg-line" id="preLog">initializing runtime…</span>
+      <span class="lg-line" style="color:var(--ivory-faint)">MFP / RESEARCH INDEX v3.0</span>
+    </div>
+  </div>
+  <div class="pre-bar"><i id="preBar"></i></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div id="top-sentinel" style="position:absolute;top:0;left:0;width:1px;height:80px;pointer-events:none" aria-hidden="true"></div>
+<header class="nav">
+  <a href="../../" class="nav-logo" aria-label="Home — MFP Research">MFP<b>·</b>RESEARCH</a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="../../">Home</a>
+    <a href="../../research/" aria-current="page">Research</a>
+    <a href="../../about/">About</a>
+    <a href="../../models/">Models</a>
+  </nav>
+</header>
+<main id="main">
+
+<article class="paper">
+  <nav class="paper-crumb" aria-label="Breadcrumb">
+    <a href="../">Research Index</a><span aria-hidden="true">/</span><span class="acc">F-04</span><span>Manuscript in preparation</span>
+  </nav>
+  <h1 class="paper-title rv">The Sim-to-Real Gap in Indoor Segmentation</h1>
+  <p class="paper-status rv">Mohammed Faisal Parvez · Hyderabad, IN</p>
+  <div class="paper-grid">
+    <div class="rv"><dl class="rx-rows">
+  <div class="rx-row"><dt>Abstract</dt><dd>Do synthetic validation scores predict real-world performance?</dd></div>
+  <div class="rx-row"><dt>Method</dt><dd><strong>SegFormer-B0</strong> fine-tuned on a <strong>1,458-image</strong> labeled real indoor dataset.</dd></div>
+  <div class="rx-row rx-row--key"><dt>Key Result</dt><dd><span class="acc">0.676 mIoU</span> on real-frame validation — while a synthetic-trained counterpart scored <span class="acc">0.988 val mIoU</span> yet failed on real footage.</dd></div>
+  <div class="rx-row"><dt>Implication</dt><dd>Synthetic metrics can <strong>wildly overstate</strong> deployability.</dd></div>
+</dl></div>
+    <div class="rv"><figure class="rx-fig">
+  <figcaption>Fig. 4 — Validation mIoU: sim vs real</figcaption>
+  <div class="fig-wrap"><svg viewBox="0 0 300 170" role="img" aria-label="Two gauges: the synthetic-trained model scores 0.988 validation mIoU while the real-trained model scores 0.676 on real frames — the same architecture under different training realities.">
+  <g transform="translate(78,96)">
+    <path d="M -50 0 A 50 50 0 0 1 50 0" fill="none" stroke="rgba(242,240,234,.12)" stroke-width="8"/>
+    <path class="f4-arc" d="M -50 0 A 50 50 0 0 1 50 0" fill="none" stroke="rgba(242,240,234,.45)" stroke-width="8" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="--off:1.2"/>
+    <text class="f4-num fig-val" y="-12" text-anchor="middle" font-size="20" data-target="0.988">0.988</text>
+    <text class="fig-mono" y="26" text-anchor="middle">sim (synthetic val)</text>
+  </g>
+  <g transform="translate(222,96)">
+    <path d="M -50 0 A 50 50 0 0 1 50 0" fill="none" stroke="rgba(242,240,234,.12)" stroke-width="8"/>
+    <path class="f4-arc" d="M -50 0 A 50 50 0 0 1 50 0" fill="none" stroke="#31e8ff" stroke-width="8" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" style="--off:32.4"/>
+    <text class="f4-num fig-val fig-val--acc" y="-12" text-anchor="middle" font-size="20" data-target="0.676">0.676</text>
+    <text class="fig-mono" y="26" text-anchor="middle">real (deployed)</text>
+  </g>
+  <text class="fig-mono" x="150" y="152" text-anchor="middle">same architecture · different training reality</text>
+</svg></div>
+</figure></div>
+  </div>
+  <nav class="paper-nav" aria-label="Finding navigation">
+    <span><a href="../1bit-vision/">← F-03 Vision on 1-bit LLMs & a Silent Training Failure</a></span>
+    <a href="../">All findings</a>
+    <span></span>
+  </nav>
+</article>
+<footer class="site-footer" id="contact">
+  <h2 class="footer-big rv">Let's push models to the <em>edge</em>.</h2>
+  <div class="footer-links rv">
+    <a class="footer-email u-sweep" href="mailto:mohammedfaisalparvez@gmail.com">mohammedfaisalparvez@gmail.com</a>
+    <div class="footer-secondary">
+      <a class="u-sweep" href="tel:+918977287230">+91 89772 87230</a>
+      <a class="u-sweep" href="https://github.com/faisalhacks" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="u-sweep" href="https://huggingface.co/Mohaaxa" target="_blank" rel="noopener">HuggingFace ↗</a>
+      <a class="u-sweep" href="https://www.linkedin.com/in/mohammed-faisal-parvez-621368241" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+  <div class="footer-base">
+    <span>© 2026 Mohammed Faisal Parvez</span>
+    <span>Hyderabad, IN <span class="acc">·</span> 17.38°N 78.48°E</span>
+    <span>Built with WebGL<span class="acc">_</span></span>
+  </div>
+</footer>
+</main>
+</body>
+</html>
